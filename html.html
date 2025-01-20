@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مبادرة الرفق بالحيوان</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+     
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width:55%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .text-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .text-container h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .text-container span {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    .content {
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+    .text-box {
+      flex: 1;
+      padding: 20px;
+    }
+    .text-box h2 {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right; 
+      color: #4169e1; 
+    }
+    .text-box span {
+      font-size: 16px;
+      margin: 10px 0;
+      text-align: right;
+      display: block; 
+    }
+    .text-box button {
+      background-color: #ffa07a; 
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+    }
+    .navigation-buttons {
+      display: flex;
+      justify-content: flex-end; 
+      margin-top: 20px; 
+      clear: both; 
+      width: 100%;
+    }
+    .navigation-buttons button {
+      background-color: #4169e1; 
+      padding: 5px 10px;
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin: 0 5px; 
+      display: flex;
+      align-items: center;
+    }
+    .navigation-buttons button svg {
+      width: 16px;
+      height: 16px;
+      stroke: #ffffff; 
+    }
+    .images-container {
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      padding: 20px;
+    }
+    .images-container img {
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .images-container img:first-child {
+      width: 150px;
+      height: 250px; 
+      object-fit: cover;
+      margin-right: 10px; 
+    }
+    .images-container img:last-child {
+      width: 100px;  
+      height: 150px; 
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-container">
+      <h1>مبادرات وحملات جمعية تعايش معي للرفق بالحيوان</h1>
+      <span>برامج تهدف إلى رعاية الحيوانات وتعزيز الوعي المجتمعي حول حقوقها، لتحقيق بيئة متوازنة تسودها الرحمة والتعايش بين الإنسان والكائنات الأخرى</span>
+    </div>
+    <div class="content">
+      <div class="text-box">
+        <h2>حملة قططنا في حاجتنا</h2>
+        <span>إنقاذ ورعاية القطط المتضررة من إزالة المناطق العشوائية في جدة. من خلال نقلها إلى أماكن مأهولة بالسكان، وتوفير الغذاء والمأوى الآمن، والعلاج اللازم لتحسين حياتها. تهدف المبادرة إلى تحسين ظروف هذه القطط وتخفيف معاناتها، عبر توفير بيئة مستقرة وآمنة</span>
+        <button>تفاصيل الحملة</button>
+        <br><br>
+        <div class="navigation-buttons">
+          <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+          <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="images-container">
+        <img src="cat1.jpg">
+        <img src="cat2.jpg" >
+      </div>
+    </div>
+  </div>
+</body>
+</html>
