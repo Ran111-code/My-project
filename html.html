@@ -7,7 +7,6 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-     
       margin: 0;
       padding: 0;
       display: flex;
@@ -16,7 +15,8 @@
       height: 100vh;
     }
     .container {
-      width:55%;
+      width: 80%;
+      max-width: 800px;
       background-color: #fff;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -40,6 +40,7 @@
     }
     .content {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       align-items: center;
     }
@@ -70,20 +71,20 @@
     .navigation-buttons {
       display: flex;
       justify-content: flex-end; 
-      margin-top: 20px; 
+      margin-top: 10px; 
       clear: both; 
-      width: 100%;
     }
     .navigation-buttons button {
-      background-color: #4169e1; 
-      padding: 5px 10px;
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      margin: 0 5px; 
-      display: flex;
-      align-items: center;
-    }
+  background-color: #4169e1; 
+  padding: 5px 10px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  margin: 0 5px; 
+  display: flex;
+  align-items: center;
+  margin-top: 10px; 
+}
     .navigation-buttons button svg {
       width: 16px;
       height: 16px;
@@ -92,23 +93,24 @@
     .images-container {
       display: flex;
       justify-content: center;
-      align-items: center; 
+      align-items: center;
       padding: 20px;
     }
     .images-container img {
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     .images-container img:first-child {
       width: 150px;
-      height: 250px; 
-      object-fit: cover;
-      margin-right: 10px; 
+      height: 250px;
+      margin-right: 10px;
     }
     .images-container img:last-child {
-      width: 100px;  
-      height: 150px; 
-      object-fit: cover;
+      width: 100px;
+      height: 150px;
     }
   </style>
 </head>
@@ -120,20 +122,56 @@
     </div>
     <div class="content">
       <div class="text-box">
-        <h2>حملة قططنا في حاجتنا</h2>
-        <span>إنقاذ ورعاية القطط المتضررة من إزالة المناطق العشوائية في جدة. من خلال نقلها إلى أماكن مأهولة بالسكان، وتوفير الغذاء والمأوى الآمن، والعلاج اللازم لتحسين حياتها. تهدف المبادرة إلى تحسين ظروف هذه القطط وتخفيف معاناتها، عبر توفير بيئة مستقرة وآمنة</span>
+        <h2 id="campaign-title">حملة قططنا في حاجتنا</h2>
+        <span id="campaign-description">إنقاذ ورعاية القطط المتضررة من إزالة المناطق العشوائية في جدة. من خلال نقلها إلى أماكن مأهولة بالسكان، وتوفير الغذاء والمأوى الآمن، والعلاج اللازم لتحسين حياتها. تهدف المبادرة إلى تحسين ظروف هذه القطط وتخفيف معاناتها، عبر توفير بيئة مستقرة وآمنة</span>
         <button>تفاصيل الحملة</button>
-        <br><br>
         <div class="navigation-buttons">
-          <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
-          <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+          <button id="prev-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+          <button id="next-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
       <div class="images-container">
-        <img src="cat1.jpg">
-        <img src="cat2.jpg" >
+        <img id="image1" src="cat1.jpg">
+        <img id="image2" src="cat2.jpg">
       </div>
     </div>
   </div>
+
+  <script>
+    const campaigns = [
+      {
+        title: 'حملة قططنا في حاجتنا',
+        description: 'إنقاذ ورعاية القطط المتضررة من إزالة المناطق العشوائية في جدة. من خلال نقلها إلى أماكن مأهولة بالسكان، وتوفير الغذاء والمأوى الآمن، والعلاج اللازم لتحسين حياتها. تهدف المبادرة إلى تحسين ظروف هذه القطط وتخفيف معاناتها، عبر توفير بيئة مستقرة وآمنة',
+        image1: 'cat1.jpg',
+        image2: 'cat2.jpg'
+      },
+      {
+        title:'حملة قططنا في حاجتنا',
+        description: 'إنقاذ ورعاية القطط المتضررة من إزالة المناطق العشوائية في جدة. من خلال نقلها إلى أماكن مأهولة بالسكان، وتوفير الغذاء والمأوى الآمن، والعلاج اللازم لتحسين حياتها. تهدف المبادرة إلى تحسين ظروف هذه القطط وتخفيف معاناتها، عبر توفير بيئة مستقرة وآمنة',
+        image1: 'cat2.jpg',
+        image2: 'cat1.jpg'
+      }
+
+    ];
+
+    let currentIndex = 0;
+
+    document.getElementById('prev-button').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + campaigns.length) % campaigns.length;
+      updateCampaign();
+    });
+
+    document.getElementById('next-button').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % campaigns.length;
+      updateCampaign();
+    });
+
+    function updateCampaign() {
+      document.getElementById('campaign-title').textContent = campaigns[currentIndex].title;
+      document.getElementById('campaign-description').textContent = campaigns[currentIndex].description;
+      document.getElementById('image1').src = campaigns[currentIndex].image1;
+      document.getElementById('image2').src = campaigns[currentIndex].image2;
+    }
+  </script>
 </body>
 </html>
